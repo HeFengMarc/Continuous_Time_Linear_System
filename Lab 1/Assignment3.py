@@ -2,6 +2,7 @@
 import simpleaudio as sa
 from scipy.io import wavfile as wav
 import numpy as np
+import soundfile as sf
 
 # Part A
 wav1 = sa.WaveObject.from_wave_file('train32.wav')
@@ -49,5 +50,5 @@ play_y4.wait_done()
 pause = np.zeros(int(4*fs2))
 y5 = np.concatenate([y1, pause, y2[:,0]])
 play_y5 = sa.play_buffer(y5, 1, 2, fs1)
-sf.write('Assignment3PartD.wav')
+sf.write('Assignment3PartD.wav', y5, fs1)
 play_y5.wait_done()
