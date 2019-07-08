@@ -44,6 +44,7 @@ print("length of the y3 = ", len_y3)
 
 y4 = y3[:,0] + y1
 play_y4 = sa.play_buffer(y4, 1, 2, fs1)
+sf.write('Assignment3PartC.wav', y4, fs1)
 play_y4.wait_done()
 
 # Part D
